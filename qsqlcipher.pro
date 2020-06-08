@@ -1,9 +1,15 @@
 TARGET = qsqlcipher
+VERSION = 5.12.8
 
 QT_FOR_CONFIG += sqldrivers-private
 
 HEADERS += $$PWD/qsql_sqlite_p.h
 SOURCES += $$PWD/qsql_sqlite.cpp $$PWD/smain.cpp
+
+CONFIG += c++11 plugin
+ios {
+    CONFIG += static
+}
 
 android {
     message(building for $$ANDROID_TARGET_ARCH)
